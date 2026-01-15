@@ -1,0 +1,105 @@
+:root {
+    --bg: #070a12;
+}
+
+
+html {
+    background: radial-gradient(
+        rgba(77, 227, 255, 0.08),
+        transparent 60%
+      ),
+      radial-gradient(
+        rgba(255, 77, 109, 0.06),
+        transparent 55%
+      ),
+      var(--bg);
+}
+
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+#screen {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#screen video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#video-container {
+    margin: 0 auto;
+    width: 110vh;
+    height: 110vh;
+}
+
+#video-container img {
+    max-width: 110px;
+    border-radius: 1vh;
+    height: auto;
+    position: relative;
+    top: 10vh;
+    left: 1%;
+}
+
+#Title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#screen p {
+    text-align: left;
+}
+
+#information {
+    position: relative;
+    width: 87%;
+    left: 13vh;
+    bottom: 10vh;
+    color: white;
+}
+
+#information p {
+    white-space: pre-wrap;
+}
+
+#information b {
+    position: absolute;
+    left: 50%;
+    font-size: 14px;
+}
+
+
+
+.movie {
+    height: 50vh;
+    width: 33.33vh;
+    margin: 5px;
+}
+
+.movie img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+#backButton {
+    position: relative;
+    left: 75vh;
+}

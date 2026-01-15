@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Mission to Mars — Home</title>
+
+    <style>
+    :root {
+  --bg: #070a12;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-2: rgba(255, 255, 255, 0.1);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+
+  --accent: #4de3ff;
+  --danger: #ff4d6d;
+
+  --radius: 16px;
+  --gap: 16px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+
+  --tap: 44px; 
+  --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font);
+  color: var(--text);
+  background: radial-gradient(
+      1200px 800px at 20% 0%,
+      rgba(77, 227, 255, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      1000px 700px at 100% 20%,
+      rgba(255, 77, 109, 0.06),
+      transparent 55%
+    ),
+    var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(77, 227, 255, 0.65);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 20px auto 40px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.brand__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 16px rgba(77, 227, 255, 0.7);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.nav__link {
+  min-height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.nav__link[aria-current="page"] {
+  background: rgba(77, 227, 255, 0.12);
+  color: var(--text);
+}
+
+
+.pagehead {
+  margin: 18px 0 18px;
+}
+
+.pagehead__title {
+  margin: 0 0 6px;
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+.pagehead__subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.card__title {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.card__actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  min-height: var(--tap);
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(77, 227, 255, 0.16);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(77, 227, 255, 0.22);
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+.footer {
+  padding: 16px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+    </style>
+  </head>
+
+  <body>
+   
+    <header class="topbar" role="banner">
+      <div class="brand" aria-label="Mission to Mars">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Mission to Mars</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+      
+        <a class="nav__link" href="index.html" aria-current="page">Home</a>
+        <a class="nav__link" href="flight.html">Flight</a>
+        <a class="nav__link" href="ship.html">Ship</a>
+        <a class="nav__link" href="menu.html">Menu</a>
+        <a class="nav__link" href="media.html">Media</a>
+        <a class="nav__link" href="games.html">Games</a>
+        <a class="nav__link" href="team.html">Team</a>
+      </nav>
+
+      <button class="btn btn--ghost" id="themeToggle" type="button">
+        Theme
+      </button>
+    </header>
+
+
+    <main class="container" id="main">
+      <header class="pagehead">
+        <h1 class="pagehead__title">Home</h1>
+        <p class="pagehead__subtitle">
+          Welcome aboard. Choose a section to continue.
+        </p>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h2 class="card__title">Flight status</h2>
+          <p class="muted" id="flightLine">Loading flight data…</p>
+          <div class="card__actions">
+            <button class="btn" type="button" data-action="refresh">
+              Refresh
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="card__title">Quick actions</h2>
+          <p class="muted">Try the touch-friendly UI controls.</p>
+          <div class="card__actions">
+            <button class="btn" type="button" data-action="toast">
+              Show message
+            </button>
+            <button class="btn btn--ghost" type="button" data-action="danger">
+              Emergency demo
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small class="muted">Mission to Mars</small>
+    </footer>
+
+    <script>
+"use strict";
+
+(function () {
+
+  function $(selector, root = document) {
+    return root.querySelector(selector);
+  }
+
+  function on(eventName, selector, handler) {
+    document.addEventListener(eventName, (event) => {
+      const target = event.target.closest(selector);
+      if (!target) return;
+      handler(event, target);
+    });
+  }
+
+
+  const THEME_KEY = "mtm-theme";
+
+  function applySavedTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved) document.documentElement.dataset.theme = saved;
+  }
+
+  function toggleTheme() {
+    const root = document.documentElement;
+    const current = root.dataset.theme || "dark";
+    const next = current === "light" ? "dark" : "light";
+    root.dataset.theme = next;
+    localStorage.setItem(THEME_KEY, next);
+    toast(`Theme: ${next}`);
+  }
+
+
+  function setFlightLine() {
+    const el = $("#flightLine");
+    if (!el) return;
+
+    const now = new Date();
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    el.textContent = `Cruising • ${now.getHours()}:${minutes} • All systems nominal`;
+  }
+
+
+  function toast(message) {
+    const el = document.createElement("div");
+    el.textContent = message;
+    el.setAttribute("role", "status");
+
+    Object.assign(el.style, {
+      position: "fixed",
+      left: "50%",
+      bottom: "18px",
+      transform: "translateX(-50%)",
+      padding: "12px 14px",
+      borderRadius: "14px",
+      background: "rgba(0,0,0,0.65)",
+      border: "1px solid rgba(255,255,255,0.12)",
+      backdropFilter: "blur(10px)",
+      zIndex: 9999,
+      maxWidth: "min(520px, calc(100% - 24px))",
+      textAlign: "center",
+    });
+
+    document.body.appendChild(el);
+    window.setTimeout(() => el.remove(), 1600);
+  }
+
+
+  function initActions() {
+    on("click", "[data-action]", (_event, btn) => {
+      const action = btn.getAttribute("data-action");
+
+      switch (action) {
+        case "refresh":
+          setFlightLine();
+          toast("Updated ✅");
+          break;
+
+        case "toast":
+          toast("Welcome aboard 🚀");
+          break;
+
+        case "danger":
+          toast("Demo only: Emergency button pressed");
+          break;
+
+        default:
+          toast(`Unknown action: ${action}`);
+      }
+    });
+  }
+
+
+  function init() {
+    applySavedTheme();
+    setFlightLine();
+
+    const themeBtn = $("#themeToggle");
+    if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
+
+    initActions();
+  }
+
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+
+    </script>
+  </body>
+</html>
