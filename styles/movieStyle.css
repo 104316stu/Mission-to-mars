@@ -1,21 +1,3 @@
-:root {
-    --bg: #070a12;
-}
-
-
-html {
-    background: radial-gradient(
-        rgba(77, 227, 255, 0.08),
-        transparent 60%
-      ),
-      radial-gradient(
-        rgba(255, 77, 109, 0.06),
-        transparent 55%
-      ),
-      var(--bg);
-}
-
-
 #container {
     display: flex;
     flex-direction: row;
