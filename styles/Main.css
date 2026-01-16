@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 html {
     background: radial-gradient(
         rgba(77, 227, 255, 0.08),
@@ -9,7 +13,6 @@ html {
       ),
       #070a12;
 }
-
 
 nav {
   display: flex;

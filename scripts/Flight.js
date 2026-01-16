@@ -17,7 +17,7 @@ function updateFlightInfo() {
 
     console.log(timesince, distanceTraveled)
 
-    distanceElement.textContent = (distanceTraveled / 1000000000).toFixed(1) + ' M KM'
+    distanceElement.textContent = (distanceTraveled / 1000000000).toFixed(1) + ' M KM / 54.6 M KM'
     speedElement.textContent = spaceTable.speed.toLocaleString() + ' M/S'
 
     const distanceleft = spaceTable.distance - distanceTraveled
