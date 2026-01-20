@@ -4,21 +4,21 @@ let videoDiv = document.getElementById("Trailer")
 let infoDiv = document.getElementById("information")
 let movieImage = document.getElementById("movieImage")
 
-const Movies = {
+const movies = {
     'space odyssey': "./Videos/2001 A SPACE ODYSSEY - Trailer - Warner Bros. (720p, h264).mp4",
     'Interstellar': "./Videos/Interstellar.mp4",
 }
 
-const MovieInfo = {
+const movieInfo = {
     'space odyssey': {
         Title: '2001: A Space Odyssey',
-        IMDB: 8.062,
+        IMDB: 8.0,
         Genre: 'Science Fiction, Mystery, Adventure',
         Duration: '149 min',
         Release: '1968',
         Actors: 'Keir Dullea Gary Lockwood William Sylvester Douglas Rain Daniel Richter',
         Overview: "Humanity finds a mysterious object buried beneath the lunar surface and sets off to find its origins with the help of HAL 9000, the world's most advanced super computer.",
-        image: "https://static.posters.cz/image/1300/75298.jpg"
+        image: "./Images/Movies/SpaceOdyssey.jpg"
     },
     'Interstellar': {
         Title: 'Interstellar',
@@ -28,7 +28,7 @@ const MovieInfo = {
         Release: '2014',
         Actors: 'Matthew McConaughey Anne Hathaway Michael Caine Jessica Chastain Casey Affleck',
         Overview: "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
-        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg"
+        image: "./Images/Movies/Interstellar.jpg"
     },
     'gravity': {
         Title: 'Gravity',
@@ -38,7 +38,7 @@ const MovieInfo = {
         Release: '2013',
         Actors: 'Sandra Bullock George Clooney Ed Harris',
         Overview: "Two astronauts work together to survive after an accident leaves them stranded in space.",
-        image: "https://upload.wikimedia.org/wikipedia/en/f/f6/Gravity_Poster.jpg"
+        image: "./Images/Movies/Gravity.jpg"
     },
     'the martian': {
         Title: 'The Martian',
@@ -48,7 +48,7 @@ const MovieInfo = {
         Release: '2015',
         Actors: 'Matt Damon Jessica Chastain Kristen Wiig Jeff Daniels',
         Overview: "An astronaut becomes stranded on Mars and must rely on his ingenuity to find a way to signal to Earth that he is alive.",
-        image: "https://upload.wikimedia.org/wikipedia/en/c/cd/The_Martian_film_poster.jpg"
+        image: "./Images/Movies/Martian.jpg"
     },
     'apollo 13': {
         Title: 'Apollo 13',
@@ -58,7 +58,7 @@ const MovieInfo = {
         Release: '1995',
         Actors: 'Tom Hanks Bill Paxton Kevin Bacon Gary Sinise Ed Harris',
         Overview: "NASA must devise a strategy to return Apollo 13 to Earth safely after the spacecraft undergoes massive internal damage.",
-        image: "https://upload.wikimedia.org/wikipedia/en/9/9e/Apollo_thirteen_movie.jpg"
+        image: "./Images/Movies/Apollo13.jpg"
     },
     'star wars': {
         Title: 'Star Wars: A New Hope',
@@ -68,7 +68,7 @@ const MovieInfo = {
         Release: '1977',
         Actors: 'Mark Hamill Harrison Ford Carrie Fisher Alec Guinness',
         Overview: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee, and two droids to save the galaxy.",
-        image: "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg"
+        image: "./Images/Movies/StarWars.jpg"
     },
     'arrival': {
         Title: 'Arrival',
@@ -78,7 +78,7 @@ const MovieInfo = {
         Release: '2016',
         Actors: 'Amy Adams Jeremy Renner Forest Whitaker',
         Overview: "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft appear around the world.",
-        image: "https://upload.wikimedia.org/wikipedia/en/d/df/Arrival%2C_Movie_Poster.jpg"
+        image: "./Images/Movies/Arrival.jpg"
     },
     'ad astra': {
         Title: 'Ad Astra',
@@ -88,7 +88,7 @@ const MovieInfo = {
         Release: '2019',
         Actors: 'Brad Pitt Tommy Lee Jones Ruth Negga',
         Overview: "Astronaut Roy McBride undertakes a mission across an unforgiving solar system to uncover the truth about his missing father.",
-        image: "https://upload.wikimedia.org/wikipedia/en/c/cb/Ad_Astra_-_film_poster.jpg"
+        image: "./Images/Movies/Astra.jpg"
     },
     'first man': {
         Title: 'First Man',
@@ -98,7 +98,7 @@ const MovieInfo = {
         Release: '2018',
         Actors: 'Ryan Gosling Claire Foy Jason Clarke',
         Overview: "A look at the life of the astronaut, Neil Armstrong, and the legendary space mission that led him to become the first man to walk on the Moon.",
-        image: "https://upload.wikimedia.org/wikipedia/en/a/a8/First_Man_%28film%29.png"
+        image: "./Images/Movies/FirstMan.png"
     },
     'hidden figures': {
         Title: 'Hidden Figures',
@@ -108,7 +108,7 @@ const MovieInfo = {
         Release: '2016',
         Actors: 'Taraji P. Henson Octavia Spencer Janelle Monáe',
         Overview: "The story of a team of female African-American mathematicians who served a vital role in NASA during the early years of the U.S. space program.",
-        image: "https://upload.wikimedia.org/wikipedia/en/4/4f/The_official_poster_for_the_film_Hidden_Figures%2C_2016.jpg"
+        image: "./Images/Movies/Hidden.jpg"
     },
 }
 
@@ -125,42 +125,41 @@ function hideSelection() {
 }
 
 
-for (const movie in MovieInfo) {
+for (const movie in movieInfo) {
     let newDiv = document.createElement("div")
     newDiv.className = "movie"
     newDiv.onclick = function() { clickedMovie(movie) }
     let newImg = document.createElement("img")
-    newImg.src = MovieInfo[movie].image
+    newImg.src = movieInfo[movie].image
     newDiv.appendChild(newImg)
     containerDiv.appendChild(newDiv)
 }
 
-function clickedMovie(Movie) {
-    let Title = document.getElementById("Title")
-    let AlsoKnownAs = document.getElementById("AlsoKnownAs")
-    let IMDB = document.getElementById("IMDB")
-    let Genre = document.getElementById("Genre")
-    let Duration = document.getElementById("Duration")
-    let Release = document.getElementById("Release")
-    let Actors = document.getElementById("Actors")
-    let Overview = document.getElementById("Overview")
+function clickedMovie(movie) {
+    let title = document.getElementById("Title")
+    let imdb = document.getElementById("IMDB")
+    let genre = document.getElementById("Genre")
+    let duration = document.getElementById("Duration")
+    let release = document.getElementById("Release")
+    let actors = document.getElementById("Actors")
+    let overview = document.getElementById("Overview")
 
-    console.log(Movie)
+    console.log(movie)
     document.body.style.cursor = "progress"
 
-    if (MovieInfo[Movie]) {
-        videoDiv.src = Movies[Movie] || "./Videos/placeholder.mp4"
-        Title.innerHTML = MovieInfo[Movie].Title
-        Overview.innerHTML = MovieInfo[Movie].Overview
-        IMDB.innerHTML = MovieInfo[Movie].IMDB
-        Genre.innerHTML = MovieInfo[Movie].Genre
-        Duration.innerHTML = MovieInfo[Movie].Duration
-        Release.innerHTML = MovieInfo[Movie].Release
-        Actors.innerHTML = MovieInfo[Movie].Actors
-        movieImage.src = MovieInfo[Movie].image
-        console.log(MovieInfo[Movie])
+    if (movieInfo[movie]) {
+        videoDiv.src = movies[movie] || "./Videos/placeholder.mp4"
+        title.innerHTML = movieInfo[movie].Title
+        overview.innerHTML = movieInfo[movie].Overview
+        imdb.innerHTML = movieInfo[movie].IMDB
+        genre.innerHTML = movieInfo[movie].Genre
+        duration.innerHTML = movieInfo[movie].Duration
+        release.innerHTML = movieInfo[movie].Release
+        actors.innerHTML = movieInfo[movie].Actors
+        movieImage.src = movieInfo[movie].image
+        console.log(movieInfo[v])
     } else {
-        console.log(`Nothing found for '${Movie}'`)
+        console.log(`Nothing found for '${movie}'`)
         document.body.style.cursor = ""
         return
     }
