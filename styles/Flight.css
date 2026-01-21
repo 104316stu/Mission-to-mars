@@ -13,7 +13,7 @@ body {
     position: relative;
 }
 
-#Earth {
+#earth {
     background-image: url(../Images/Flight/Earth.png);
     background-size: cover;
     position: absolute;
@@ -24,7 +24,7 @@ body {
     transform: translateY(-50%);
 }
 
-#Mars {
+#mars {
     background-image: url(../Images/Flight/Mars.png);
     background-size: cover;
     position: absolute;
@@ -36,7 +36,7 @@ body {
 }
 
 
-#Earth-Info {
+#earth-info {
     background-image: url(../Images/Flight/EarthInfo.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ body {
     top: -15%;
 }
 
-#Mars-Info {
+#mars-info {
     background-image: url(../Images/Flight/MarsInfo.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ body {
 
 }
 
-#Rocket {
+#rocket {
     background-image: url(../Images/Flight/Rocket.png);
     background-size:contain;
     background-repeat: no-repeat;
@@ -69,7 +69,7 @@ body {
     left: 40%;
 }
 
-#Flight-Info {
+#flight-info {
     font-family: 'Istok Web', sans-serif;
     color: white;
     position: absolute;

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
-    <link rel="stylesheet" href="./styles/movieStyle.css">
-    <link rel="stylesheet" href="./styles/Main.css">
-    <script src="./scripts/Movie.js" defer></script>
+    <link rel="stylesheet" href="../styles/movieStyle.css">
+    <link rel="stylesheet" href="../styles/Main.css">
+    <script src="../scripts/Movie.js" defer></script>
 </head>
 <body>
     <nav>
-        <button class="nav-button"><a href="./mars.html">Home</a></button>
+        <button class="nav-button"><a href="../mars.html">Home</a></button>
         <button class="nav-button"><a href="./Flight.html">Flight</a></button>
         <button class="nav-button"><a href="">Ship</a></button>
         <button class="nav-button"><a href="">Menu</a></button>
@@ -23,18 +23,18 @@
     <div id="screen">
         <button id="backButton" onclick="hideSelection()">Back to Movies</button>
         <div id="video-container">
-            <video id="Trailer" controls="true">
-                <source src="./Images/Movies/Interstellar.jpg" type="video/mp4" />
+            <video id="trailer" controls="true">
+                <source src="../Images/Movies/Interstellar.jpg" type="video/mp4" />
             </video>
-            <img id="movieImage" src="" alt="">
+            <img id="movie-image" src="" alt="">
             <div id="information">
-                <p id="Title"></p>
-                <p>IMDB: <b id="IMDB"></b></p>
-                <p>Genre: <b id="Genre"></b></p>
-                <p>Duration: <b id="Duration"></b></p>
-                <p>Release Date: <b id="Release"></b></p>
-                <p>Actors: <b id="Actors"></b></p>
-                <p>Overview: <b id="Overview"></b></p>
+                <p id="title"></p>
+                <p>IMDB: <b id="imdb"></b></p>
+                <p>Genre: <b id="genre"></b></p>
+                <p>Duration: <b id="duration"></b></p>
+                <p>Release Date: <b id="release"></b></p>
+                <p>Actors: <b id="actors"></b></p>
+                <p>Overview: <b id="overview"></b></p>
             </div>
         </div>
     </div>
