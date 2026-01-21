@@ -7,6 +7,14 @@ const spaceTable  = {
 let distanceElement = document.getElementById('distance')
 let speedElement = document.getElementById('speed')
 let estimatedTimeElement = document.getElementById('estimated-time')
+let rocket = document.getElementById("rocket")
+
+const topPercent = 20
+const lowPercent = 30
+
+const leftTopPercent = 85
+const leftLowPercent = 10
+
 
 function updateFlightInfo() {
     const Time = new Date().getTime()
@@ -14,6 +22,14 @@ function updateFlightInfo() {
 
     let secondsSince = timeSince / 1000
     let distanceTraveled = spaceTable.speed * secondsSince
+    let distancePercentage = (distanceTraveled/spaceTable.distance) * 100
+
+    let hillTimes
+    if (distancePercentage < 50) {
+        hillTimes = (100 - Math.abs(distancePercentage-50)) / 100
+        rocket.style.top =  lowPercent - (lowPercent-topPercent) * hillTimes+"%"
+        rocket.style.left = leftLowPercent - (leftLowPercent-leftTopPercent) * distancePercentage/100+"%"
+    }
 
     distanceElement.textContent = (distanceTraveled / 1000000000).toFixed(1) + ' M KM / 54.6 M KM'
     speedElement.textContent = spaceTable.speed.toLocaleString() + ' M/S'
