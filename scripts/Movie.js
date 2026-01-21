@@ -1,25 +1,15 @@
 let containerDiv = document.getElementById("container")
 let screenDiv = document.getElementById("screen")
 let videoDiv = document.getElementById("trailer")
-let infoDiv = document.getElementById("information")
 let movieImage = document.getElementById("movie-image")
 
 const movies = {
     'space odyssey': "../Videos/2001 A SPACE ODYSSEY - Trailer - Warner Bros. (720p, h264).mp4",
     'Interstellar': "../Videos/Interstellar.mp4",
+    'Moonfall': "../Videos/Moonfall.mp4",
 }
 
 const movieInfo = {
-    'space odyssey': {
-        title: '2001: A Space Odyssey',
-        imdb: 8.0,
-        genre: 'Science Fiction, Mystery, Adventure',
-        duration: '149 min',
-        release: '1968',
-        actors: 'Keir Dullea Gary Lockwood William Sylvester Douglas Rain Daniel Richter',
-        overview: "Humanity finds a mysterious object buried beneath the lunar surface and sets off to find its origins with the help of HAL 9000, the world's most advanced super computer.",
-        image: "../Images/Movies/SpaceOdyssey.jpg"
-    },
     'Interstellar': {
         title: 'Interstellar',
         imdb: 8.5,
@@ -29,6 +19,26 @@ const movieInfo = {
         actors: 'Matthew McConaughey Anne Hathaway Michael Caine Jessica Chastain Casey Affleck',
         overview: "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
         image: "../Images/Movies/Interstellar.jpg"
+    },
+    'Moonfall': {
+        title: 'Moonfall',
+        imdb: 5.2,
+        genre: 'Action, Adventure, Science Fiction',
+        duration: '130 min',
+        release: '2022',
+        actors: 'Halle Berry Patrick Wilson John Bradley',
+        overview: "A mysterious force knocks the Moon from its orbit around Earth and sends it hurtling on a collision course with life as we know it. As panic spreads and the world prepares for impact, a ragtag team ventures into space to uncover the real threat behind the disaster and save humanity.",
+        image: "../Images/Movies/Moonfall.webp"
+    },
+    'space odyssey': {
+        title: '2001: A Space Odyssey',
+        imdb: 8.0,
+        genre: 'Science Fiction, Mystery, Adventure',
+        duration: '149 min',
+        release: '1968',
+        actors: 'Keir Dullea Gary Lockwood William Sylvester Douglas Rain Daniel Richter',
+        overview: "Humanity finds a mysterious object buried beneath the lunar surface and sets off to find its origins with the help of HAL 9000, the world's most advanced super computer.",
+        image: "../Images/Movies/SpaceOdyssey.jpg"
     },
     'gravity': {
         title: 'Gravity',
@@ -49,6 +59,36 @@ const movieInfo = {
         actors: 'Matt Damon Jessica Chastain Kristen Wiig Jeff Daniels',
         overview: "An astronaut becomes stranded on Mars and must rely on his ingenuity to find a way to signal to Earth that he is alive.",
         image: "../Images/Movies/Martian.jpg"
+    },
+    'Dune': {
+        title: 'Dune',
+        imdb: 8.0,
+        genre: 'Action, Adventure, Science Fiction',
+        duration: '155 min',
+        release: '2021',
+        actors: 'Timothée Chalamet Rebecca Ferguson Oscar Isaac Josh Brolin Zendaya',
+        overview: "Paul Atreides, a gifted young man born into a great destiny, travels to the desert planet Arrakis to secure his family’s future as rival forces battle for control of the planet’s precious spice.",
+       image: "../Images/Movies/Dune.jpg"
+    },
+    'dune: part two': {
+       title: 'Dune: Part Two',
+        imdb: 8.6,
+        genre: 'Action, Adventure, Science Fiction',
+        duration: '166 min',
+        release: '2024',
+        actors: 'Timothée Chalamet Zendaya Rebecca Ferguson Josh Brolin',
+        overview: "Paul Atreides unites with the Fremen to wage war against the conspirators who destroyed his family and to decide the fate of Arrakis.",
+        image: "../Images/Movies/Dune_Part_Two_poster.jpeg"
+    },
+    'alien': {
+        title: 'Alien',
+        imdb: 8.5,
+        genre: 'Horror, Science Fiction',
+        duration: '117 min',
+        release: '1979',
+        actors: 'Sigourney Weaver Tom Skerritt Veronica Cartwright John Hurt',
+        overview: "The crew of a commercial spaceship encounters a deadly lifeform after investigating a distress signal on a remote planet.",
+        image: "../Images/Movies/Alien.jpg"
     },
     'apollo 13': {
         title: 'Apollo 13',
@@ -110,16 +150,41 @@ const movieInfo = {
         overview: "The story of a team of female African-American mathematicians who served a vital role in NASA during the early years of the U.S. space program.",
         image: "../Images/Movies/Hidden.jpg"
     },
+    'avatar': {
+        title: 'Avatar',
+        imdb: 7.9,
+        genre: 'Action, Adventure, Science Fiction',
+        duration: '162 min',
+        release: '2009',
+        actors: 'Sam Worthington Zoe Saldana Sigourney Weaver Stephen Lang',
+        overview: "A paralyzed marine is sent to the alien world Pandora and must choose between following orders and protecting his new home.",
+        image: "../Images/Movies/Avatar.jpg"
+    },
+    'guardians of the galaxy': {
+        title: 'Guardians of the Galaxy',
+        imdb: 8.0,
+        genre: 'Action, Adventure, Comedy, Science Fiction',
+        duration: '121 min',
+        release: '2014',
+        actors: 'Chris Pratt Zoe Saldana Dave Bautista Vin Diesel Bradley Cooper',
+        overview: "A band of misfit criminals forms an unlikely team to stop a powerful villain from using an artifact to destroy the galaxy.",
+        image: "../Images/Movies/Guardians_of_the_Galaxy.jpg"
+    },
 }
+
+let previousScroll = [0,0]
 
 function hideSelection() {
     if (containerDiv.style.visibility == "hidden") {
         containerDiv.style.visibility = "visible"
         screenDiv.style.visibility = "hidden"
+        window.scrollTo(previousScroll[1], previousScroll[0])
         videoDiv.pause()
     } else {
         containerDiv.style.visibility = "hidden"
         screenDiv.style.visibility = "visible"
+        previousScroll = [window.scrollY, window.scrollX]
+        window.scrollTo(0, 0)
     }
     
 }
@@ -163,4 +228,5 @@ function clickedMovie(movie) {
 
     hideSelection()
     document.body.style.cursor = ""
+    videoDiv.play()
 }
