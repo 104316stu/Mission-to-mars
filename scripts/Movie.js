@@ -7,6 +7,7 @@ const movies = {
     'space odyssey': "../Videos/2001 A SPACE ODYSSEY - Trailer - Warner Bros. (720p, h264).mp4",
     'Interstellar': "../Videos/Interstellar.mp4",
     'Moonfall': "../Videos/Moonfall.mp4",
+    'first man': "http://78.47.119.106:8000/Movies/First%20Man%20%282018%29.mp4"
 }
 
 const movieInfo = {
@@ -212,7 +213,18 @@ function clickedMovie(movie) {
     document.body.style.cursor = "progress"
 
     if (movieInfo[movie]) {
-        videoDiv.src = movies[movie] || "../Videos/placeholder.mp4"
+        videoDiv.src = "../Videos/placeholder.mp4"
+
+        if (movies[movie]) {
+
+        fetch(movies[movie], { headers: { Range: 'bytes=0-0' } })
+            .then(resp => {
+                if (resp.ok) {
+                    videoDiv.src = movies[movie]
+                }
+            })
+        }
+
         title.innerHTML = movieInfo[movie].title
         overview.innerHTML = movieInfo[movie].overview
         imdb.innerHTML = movieInfo[movie].imdb
