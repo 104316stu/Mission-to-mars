@@ -221,6 +221,7 @@ function clickedMovie(movie) {
             .then(resp => {
                 if (resp.ok) {
                     videoDiv.src = movies[movie]
+                    videoDiv.play()
                 }
             })
         }
