@@ -76,6 +76,8 @@
 .movie img {
     height: 100%;
     width: 100%;
+    color: white;
+    font-size: 32px;
     cursor: pointer;
 }
 
