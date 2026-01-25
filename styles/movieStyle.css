@@ -23,6 +23,7 @@
     position: relative;
     aspect-ratio: 16/9;
     background-color: black;
+    border-radius: 1%;
 }
 
 #video-container {
