@@ -3,23 +3,25 @@ let screenDiv = document.getElementById("screen")
 let videoDiv = document.getElementById("trailer")
 let movieImage = document.getElementById("movie-image")
 
+let beginningLink = "https://files.xzeviousmal.store/Movies/"
+
 const movies = {
-    'space odyssey': "https://78.47.119.106:8000/Movies/2001%20A%20Space%20Odyssey%20%281968%29.mp4",
-    'interstellar': "https://78.47.119.106:8000/Movies/Interstellar%20%282014%29.mp4",
-    'Moonfall': "https://78.47.119.106:8000/Movies/Moonfall%20%282022%29.mp4",
-    'first man': "https://78.47.119.106:8000/Movies/First%20Man%20%282018%29.mp4",
-    'avatar': "https://78.47.119.106:8000/Movies/Avatar%20%282009%29.mp4",
-    'hidden figures': "https://78.47.119.106:8000/Movies/Hidden%20Figures%20%282016%29.mp4",
-    'arrival': "https://78.47.119.106:8000/Movies/Arrival.mp4",
-    'the martian': "https://78.47.119.106:8000/Movies/The%20Martian%20%282015%29.mp4",
-    'gravity': "https://78.47.119.106:8000/Movies/Gravity%20%282013%29.mp4",
-    'Dune': "https://78.47.119.106:8000/Movies/Dune%20%282021%29.mp4",
-    'dune: part two': "https://78.47.119.106:8000/Movies/Dune%20Part%20Two%20%282024%29.mp4",
-    'alien': "https://78.47.119.106:8000/Movies/Alien%20%281979%29.mp4",
-    'apollo 13': "https://78.47.119.106:8000/Movies/Apollo%2013%20%281995%29.mp4",
-    'star wars': "https://78.47.119.106:8000/Movies/Star%20Wars%20Episode%204%20A%20New%20Hope%20%281977%29.mp4",
-    'ad astra': "https://78.47.119.106:8000/Movies/Ad%20Astra%20%282019%29.mp4",
-    'guardians of the galaxy': "https://78.47.119.106:8000/Movies/Guardians%20of%20the%20Galaxy%20%282014%29.mp4"
+    'space odyssey': `${beginningLink}2001%20A%20Space%20Odyssey%20%281968%29.mp4`,
+    'interstellar': `${beginningLink}Interstellar%20%282014%29.mp4`,
+    'Moonfall': `${beginningLink}Moonfall%20%282022%29.mp4`,
+    'first man': `${beginningLink}First%20Man%20%282018%29.mp4`,
+    'avatar': `${beginningLink}Avatar%20%282009%29.mp4`,
+    'hidden figures': `${beginningLink}Hidden%20Figures%20%282016%29.mp4`,
+    'arrival': `${beginningLink}Arrival.mp4`,
+    'the martian': `${beginningLink}The%20Martian%20%282015%29.mp4`,
+    'gravity': `${beginningLink}Gravity%20%282013%29.mp4`,
+    'Dune': `${beginningLink}Dune%20%282021%29.mp4`,
+    'dune: part two': `${beginningLink}Dune%20Part%20Two%20%282024%29.mp4`,
+    'alien': `${beginningLink}Alien%20%281979%29.mp4`,
+    'apollo 13': `${beginningLink}Apollo%2013%20%281995%29.mp4`,
+    'star wars': `${beginningLink}Star%20Wars%20Episode%204%20A%20New%20Hope%20%281977%29.mp4`,
+    'ad astra': `${beginningLink}Ad%20Astra%20%282019%29.mp4`,
+    'guardians of the galaxy': `${beginningLink}Guardians%20of%20the%20Galaxy%20%282014%29.mp4`
 }
 
 const movieInfo = {
