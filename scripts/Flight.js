@@ -10,10 +10,11 @@ let estimatedTimeElement = document.getElementById('estimated-time')
 let rocket = document.getElementById("rocket")
 
 const topPercent = 10
-const lowPercent = 30
+const lowPercentMars = 40
+const lowPercentEarth = 35
 
-const leftTopPercent = 85
-const leftLowPercent = 10
+const leftTopPercent = 84
+const leftLowPercent = 13
 
 
 function updateFlightInfo() {
@@ -22,11 +23,26 @@ function updateFlightInfo() {
 
     let secondsSince = timeSince / 1000
     let distanceTraveled = spaceTable.speed * secondsSince
-    let distancePercentage = (distanceTraveled/spaceTable.distance) * 100
+    let distancePercentage =  (distanceTraveled/spaceTable.distance) * 100
+    
+    if (distancePercentage >= 100) { 
+        estimatedTimeElement.textContent = "You have arrived at Station 15. MARS" 
+        speedElement.textContent = "Stopped"
+        distanceElement.textContent = "54.6 M KM / 54.6 M KM"
+        rocket.style.top =  lowPercentMars + "%"
+        rocket.style.left = leftTopPercent + "%"
+        distancePercentage = 100
+        distanceTraveled = spaceTable.distance
 
-    let hillTimes = (100 - Math.abs(distancePercentage-50)) / 100
+        return
+    }
+
+    let lowPercent = distancePercentage < 50 ? lowPercentEarth : lowPercentMars
+
+    let hillTimes = 1 - Math.abs(distancePercentage-50) / 50
     rocket.style.top =  lowPercent - (lowPercent-topPercent) * hillTimes+"%"
     rocket.style.left = leftLowPercent - (leftLowPercent-leftTopPercent) * distancePercentage/100+"%"
+    console.log(lowPercent)
 
     distanceElement.textContent = (distanceTraveled / 1000000000).toFixed(1) + ' M KM / 54.6 M KM'
 

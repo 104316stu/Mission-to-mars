@@ -75,5 +75,6 @@ body {
     left: 10%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.75);
-    border: 2px solid white
+    border: 2px solid white;
+    border-radius: .8vh;
 }
