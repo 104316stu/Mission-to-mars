@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Blackjack • Mission to Mars</title>
+
+  <link rel="stylesheet" href="../styles/Main.css" />
+  <link rel="stylesheet" href="../styles/Home.css" />
+  <link rel="stylesheet" href="../styles/GamePage.css" />
+  <link rel="stylesheet" href="../styles/Wallet.css" />
+  <link rel="stylesheet" href="../styles/Blackjack.css" />
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="brand" aria-label="Mission to Mars">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span class="brand__text">Mission to Mars</span>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="../mars.html">Home</a>
+      <a class="nav__link" href="./Flight.html">Flight</a>
+      <a class="nav__link" href="./Ship.html">Ship</a>
+      <a class="nav__link" href="./Menu.html">Menu</a>
+      <a class="nav__link" href="./Movies.html">Movies</a>
+      <a class="nav__link" href="./Games.html" aria-current="page">Games</a>
+      <a class="nav__link" href="./Team.html">Team</a>
+    </nav>
+    <a class="btn btn--ghost" href="./Games.html">Back to games</a>
+  </header>
+
+  <main class="container game-wrap">
+    <header class="pagehead">
+      <h1 class="pagehead__title">Blackjack</h1>
+      <p class="pagehead__subtitle">You vs dealer. Goal: get as close to 21 as possible without going over.</p>
+    </header>
+
+    <section class="game-shell" aria-label="Blackjack game">
+      <div class="game-area bj">
+        <div class="walletbar" aria-label="Wallet">
+          <div class="walletbar__left">
+            <span class="walletchip"><span class="walletchip__label">Balance</span> <span class="walletchip__value" data-wallet-balance>—</span></span>
+          </div>
+          <div class="wallet-actions">
+            <button class="btn btn--ghost" type="button" data-wallet-reset>Reset credits</button>
+          </div>
+        </div>
+
+        <div class="controls betrow" aria-label="Controls">
+          <div class="field">
+            <label for="bj-bet">Bets (credits)</label>
+            <input id="bj-bet" data-bj-bet type="number" min="1" step="1" value="50" />
+          </div>
+          <button class="btn" type="button" data-bj-new>New round</button>
+          <button class="btn" type="button" data-bj-hit>Hit</button>
+          <button class="btn btn--ghost" type="button" data-bj-stand>Stand</button>
+        </div>
+
+        <p class="notice">For fun only — these are fake credits stored in your browser.</p>
+
+        <section class="hand" aria-label="Dealer hand">
+          <div class="bj__row">
+            <strong>Dealer</strong>
+            <span class="pill">Score: <strong data-bj-dealer-score>—</strong></span>
+          </div>
+          <div class="cards" data-bj-dealer></div>
+        </section>
+
+        <section class="hand" aria-label="Player hand">
+          <div class="bj__row">
+            <strong>You</strong>
+            <span class="pill">Score: <strong data-bj-player-score>—</strong></span>
+          </div>
+          <div class="cards" data-bj-player></div>
+        </section>
+
+        <div class="bj__result" data-bj-status></div>
+      </div>
+
+      <aside class="game-aside" aria-label="Info">
+        <article class="card">
+          <h2 class="card__title">Rules</h2>
+          <ul class="muted">
+            <li>Dealer draws to 16, stands on 17.</li>
+            <li>Aces count as 11 or 1.</li>
+            <li>Bet is charged when you start a round.</li>
+            <li>Win pays 2×, blackjack pays 2.5×, push refunds.</li>
+          </ul>
+        </article>
+      </aside>
+    </section>
+  </main>
+  <script src="../scripts/wallet.js" defer></script>
+  <script src="../scripts/games/blackjack.js" defer></script>
+</body>
+</html>
