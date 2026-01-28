@@ -3,7 +3,7 @@ let screenDiv = document.getElementById("screen")
 let videoDiv = document.getElementById("trailer")
 let movieImage = document.getElementById("movie-image")
 
-let beginningLink = "https://files.xzeviousmal.store/Movies/"
+let beginningLink = "https://files.xzeviousmal.store:8000/Movies/"
 
 const movies = {
     'space odyssey': `${beginningLink}2001%20A%20Space%20Odyssey%20%281968%29.mp4`,
