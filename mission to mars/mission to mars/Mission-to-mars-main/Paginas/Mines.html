@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Mines • Mission to Mars</title>
+
+  <link rel="stylesheet" href="../styles/Main.css" />
+  <link rel="stylesheet" href="../styles/Home.css" />
+  <link rel="stylesheet" href="../styles/GamePage.css" />
+  <link rel="stylesheet" href="../styles/Wallet.css" />
+  <link rel="stylesheet" href="../styles/Mines.css" />
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="brand" aria-label="Mission to Mars">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span class="brand__text">Mission to Mars</span>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="../mars.html">Home</a>
+      <a class="nav__link" href="./Flight.html">Flight</a>
+      <a class="nav__link" href="./Ship.html">Ship</a>
+      <a class="nav__link" href="./Menu.html">Menu</a>
+      <a class="nav__link" href="./Movies.html">Movies</a>
+      <a class="nav__link" href="./Games.html" aria-current="page">Games</a>
+      <a class="nav__link" href="./Team.html">Team</a>
+    </nav>
+    <a class="btn btn--ghost" href="./Games.html">Back to games</a>
+  </header>
+
+  <main class="container game-wrap">
+    <header class="pagehead">
+      <h1 class="pagehead__title">Mines</h1>
+      <p class="pagehead__subtitle">Pick safe tiles, build a multiplier, and cash out before you hit a mine.</p>
+    </header>
+
+    <section class="game-shell" aria-label="Mines game">
+      <div class="game-area mines">
+        <div class="walletbar" aria-label="Wallet">
+          <div class="walletbar__left">
+            <span class="walletchip"><span class="walletchip__label">Balance</span> <span class="walletchip__value" data-wallet-balance>—</span></span>
+          </div>
+          <div class="wallet-actions">
+            <button class="btn btn--ghost" type="button" data-wallet-reset>Reset credits</button>
+          </div>
+        </div>
+
+        <div class="controls betrow" aria-label="Controls">
+          <div class="field">
+            <label for="mines-bet">Bet (credits)</label>
+            <input id="mines-bet" data-mines-bet type="number" min="1" step="1" value="50" />
+          </div>
+          <div class="field">
+            <label for="mines-mines">Mines (1–24)</label>
+            <input id="mines-mines" data-mines-mines type="number" min="1" max="24" value="5" />
+          </div>
+          <button class="btn" type="button" data-mines-start>Start</button>
+          <button class="btn btn--ghost" type="button" data-mines-cash disabled>Cash out</button>
+          <button class="btn btn--ghost" type="button" data-mines-reset>New round</button>
+        </div>
+
+        <p class="notice">For fun only — these are fake credits stored in your browser.</p>
+
+        <div class="mines__grid" data-mines-grid aria-label="Mines grid"></div>
+      </div>
+
+      <aside class="game-aside" aria-label="Info">
+        <article class="card">
+          <h2 class="card__title">Mission Log</h2>
+          <div class="statline" aria-label="Stats">
+            <span>Mines: <strong data-mines-count>—</strong></span>
+            <span>Safe picks: <strong data-mines-safe>0</strong></span>
+            <span>Multiplier: <strong data-mines-m>1.00×</strong></span>
+          </div>
+          <p class="toast" data-mines-status></p>
+          <p class="muted">Tip: more mines = bigger multiplier, but higher risk.</p>
+        </article>
+      </aside>
+    </section>
+  </main>
+  <script src="../scripts/wallet.js" defer></script>
+  <script src="../scripts/games/mines.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Plinko • Mission to Mars</title>
+
+  <link rel="stylesheet" href="../styles/Main.css" />
+  <link rel="stylesheet" href="../styles/Home.css" />
+  <link rel="stylesheet" href="../styles/GamePage.css" />
+  <link rel="stylesheet" href="../styles/Wallet.css" />
+  <link rel="stylesheet" href="../styles/Plinko.css" />
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="brand" aria-label="Mission to Mars">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span class="brand__text">Mission to Mars</span>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="../mars.html">Home</a>
+      <a class="nav__link" href="./Flight.html">Flight</a>
+      <a class="nav__link" href="./Ship.html">Ship</a>
+      <a class="nav__link" href="./Menu.html">Menu</a>
+      <a class="nav__link" href="./Movies.html">Movies</a>
+      <a class="nav__link" href="./Games.html" aria-current="page">Games</a>
+      <a class="nav__link" href="./Team.html">Team</a>
+    </nav>
+    <a class="btn btn--ghost" href="./Games.html">Back to games</a>
+  </header>
+
+  <main class="container game-wrap">
+    <header class="pagehead">
+      <h1 class="pagehead__title">Plinko</h1>
+      <p class="pagehead__subtitle">Drop a ball, land a multiplier, win (fake) credits.</p>
+    </header>
+
+    <section class="game-shell" aria-label="Plinko game">
+      <div class="game-area plinko">
+        <div class="walletbar" aria-label="Wallet">
+          <div class="walletbar__left">
+            <span class="walletchip"><span class="walletchip__label">Balance</span> <span class="walletchip__value" data-wallet-balance>—</span></span>
+          </div>
+          <div class="wallet-actions">
+            <button class="btn btn--ghost" type="button" data-wallet-reset>Reset credits</button>
+          </div>
+        </div>
+
+        <div class="controls betrow" aria-label="Controls">
+          <div class="field">
+            <label for="plinko-bet">Bet (credits)</label>
+            <input id="plinko-bet" data-plinko-bet type="number" min="1" step="1" value="50" />
+          </div>
+          <button class="btn" type="button" data-plinko-drop>Drop</button>
+          <button class="btn btn--ghost" type="button" data-plinko-reset>Reset</button>
+          <span class="pill">Last: <strong data-plinko-last>—</strong></span>
+        </div>
+
+        <p class="notice">For fun only — these are fake credits stored in your browser.</p>
+
+        <canvas data-plinko-canvas width="540" height="720" aria-label="Plinko board"></canvas>
+
+        <div class="slots" aria-label="Slots">
+          <span class="slot">0.2×</span><span class="slot">0.5×</span><span class="slot">1×</span><span class="slot">2×</span><span class="slot">5×</span>
+          <span class="slot">2×</span><span class="slot">1×</span><span class="slot">0.5×</span><span class="slot">0.2×</span>
+        </div>
+      </div>
+
+      <aside class="game-aside" aria-label="Info">
+        <article class="card">
+          <h2 class="card__title">Mission Log</h2>
+          <p class="toast" data-plinko-status></p>
+          <p class="muted">House rule: you pay your bet to drop, then get bet × multiplier when it lands.</p>
+        </article>
+      </aside>
+    </section>
+  </main>
+  <script src="../scripts/wallet.js" defer></script>
+  <script src="../scripts/games/plinko.js" defer></script>
+</body>
+</html>

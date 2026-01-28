@@ -1,0 +1,93 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#screen {
+    visibility: hidden;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#screen video {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    aspect-ratio: 16/9;
+    background-color: black;
+    border-radius: 1%;
+}
+
+#video-container {
+    margin: 0 auto;
+    width: 110vh;
+    height: 110vh;
+}
+
+#video-container img {
+    max-width: 110px;
+    border-radius: 1vh;
+    height: auto;
+    position: relative;
+    top: 10vh;
+    right: 1%;
+}
+
+#title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#screen p {
+    text-align: left;
+}
+
+#information {
+    position: relative;
+    width: 87%;
+    left: 13vh;
+    bottom: 10vh;
+    color: white;
+}
+
+#information p {
+    white-space: pre-wrap;
+}
+
+#information b {
+    position: absolute;
+    left: 50%;
+    font-size: 14px;
+}
+
+.movie {
+    height: 50vh;
+    width: 33.33vh;
+    margin: 5px;
+}
+
+.movie img {
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    border-radius: .5vh;
+}
+
+#back-button {
+    margin: 16px 0;
+    padding: 12px 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: lightgray;
+    border: 0;
+    cursor: pointer;
+}

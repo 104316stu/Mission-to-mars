@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>Mission to Mars — Home</title>
+
+<link href="./styles/Main.css" rel="stylesheet"/><link href="./styles/Home.css" rel="stylesheet"/></head>
+<body>
+<header class="topbar" role="banner">
+<div aria-label="Mission to Mars" class="brand">
+<span aria-hidden="true" class="brand__dot"></span>
+<span class="brand__text">Mission to Mars</span>
+</div>
+<nav aria-label="Primary" class="nav">
+<a aria-current="page" class="nav__link" href="./mars.html">Home</a>
+<a class="nav__link" href="./Paginas/Flight.html">Flight</a>
+<a class="nav__link" href="./Paginas/Ship.html">Ship</a>
+<a class="nav__link" href="./Paginas/Menu.html">Menu</a>
+<a class="nav__link" href="./Paginas/Movies.html">Movies</a>
+<a class="nav__link" href="./Paginas/Games.html">Games</a>
+<a class="nav__link" href="./Paginas/Team.html">Team</a>
+</nav>
+<button class="btn btn--ghost" id="themeToggle" type="button">
+        Theme
+      </button>
+</header>
+<main class="container" id="main">
+<header class="pagehead">
+<h1 class="pagehead__title">Home</h1>
+<p class="pagehead__subtitle">
+          Welcome aboard. Choose a section to continue.
+        </p>
+</header>
+<section class="grid">
+<article class="card">
+<h2 class="card__title">Flight status</h2>
+<p class="muted" id="flightLine">Loading flight data…</p>
+<div class="card__actions">
+<button class="btn" data-action="refresh" type="button">
+              Refresh
+            </button>
+</div>
+</article>
+<article class="card">
+<h2 class="card__title">Quick actions</h2>
+<p class="muted">Try the touch-friendly UI controls.</p>
+<div class="card__actions">
+<button class="btn" data-action="toast" type="button">
+              Show message
+            </button>
+<button class="btn btn--ghost" data-action="danger" type="button">
+              Emergency demo
+            </button>
+</div>
+</article>
+</section>
+</main>
+<script src="./scripts/Home.js"></script></body>
+</html>

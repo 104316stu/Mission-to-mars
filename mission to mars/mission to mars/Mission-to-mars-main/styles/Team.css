@@ -1,0 +1,40 @@
+.person{
+  display:flex;
+  gap: 14px;
+  align-items:flex-start;
+}
+
+.avatar{
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: rgba(77,227,255,0.18);
+  border: 1px solid rgba(77,227,255,0.35);
+  flex: 0 0 auto;
+}
+
+.role{ margin: 4px 0 10px; }
+
+.tags{
+  list-style:none;
+  padding:0;
+  margin: 12px 0 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+}
+
+.tags li{
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  font-size: 0.9rem;
+}
+
+.team-note{ margin-top: 16px; }

@@ -1,0 +1,33 @@
+.wheel{
+  display:grid;
+  gap: 14px;
+}
+
+.wheelstage{
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.pointer{
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 22px solid rgba(255,255,255,0.88);
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));
+  z-index: 5;
+}
+
+.wheel canvas{
+  width: min(520px, 92vw);
+  height: auto;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 12px 42px rgba(0,0,0,0.35);
+}
